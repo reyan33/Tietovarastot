@@ -1,0 +1,32 @@
+-- 1. Elokuvat: nimi, valmistumisvuosi, ohjaajan nimi ja näyttelijän nimi
+SELECT leffat.nimi, leffat.valmistumisvuosi, ohjaajat.nimi, nayttelijat.nimi
+FROM leffat
+JOIN ohjaajat
+JOIN nayttelijat
+WHERE leffat.ohjaaja_id = ohjaajat.id
+AND leffat.nayttelija_id = nayttelijat.id;
+
+-- 2. Ohjaajat, jotka ovat syntyneet ennen vuotta 1980
+SELECT nimi, syntymavuosi
+FROM ohjaajat
+WHERE syntymavuosi < 1980;
+
+-- 3. Näyttelijät, joiden hotness on suurempi kuin 8
+SELECT nimi, syntymavuosi, hotness
+FROM nayttelijat
+WHERE hotness > 8;
+
+-- 4. Elokuvat, jotka on julkaistu vuosien 1990 ja 2005 välillä
+SELECT leffat.nimi, leffat.valmistumisvuosi, ohjaajat.nimi
+FROM leffat
+JOIN ohjaajat
+WHERE leffat.ohjaaja_id = ohjaajat.id
+AND leffat.valmistumisvuosi >= 1990
+AND leffat.valmistumisvuosi <= 2005;
+
+-- 5. Elokuvat, joiden näyttelijän hotness on suurempi kuin 5
+SELECT leffat.nimi, nayttelijat.nimi, nayttelijat.hotness
+FROM leffat
+JOIN nayttelijat
+WHERE leffat.nayttelija_id = nayttelijat.id
+AND nayttelijat.hotness > 5;
