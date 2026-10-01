@@ -1,0 +1,7 @@
+# Old/study files - keep locally only
+verkkopankki/transfer.php
+verkkopankki/reset_admin_password.php
+
+# Local helper/backup files
+sample_data.py
+leffat2_backup.db
